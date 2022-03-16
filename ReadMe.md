@@ -27,6 +27,7 @@
 
 ## Clean up
     csk@csk-ai-revolution:~/Sathish/Softwares/apache airflow$ sudo docker-compose down --volumes --rmi all
+    csk@csk-ai-revolution:~/Sathish/Softwares/apache airflow$ sudo docker-compose down --volumes --remove-orphans
 
 ## Check in browser : Apache Airflow UI
 
@@ -39,3 +40,10 @@
 DAG page
 
 ![alt text](images/airflow_2.png)
+
+
+### Running other docker file
+
+	csk@csk-ai-revolution:~/PycharmProjects/git/apache_airflow$ sudo docker build -f dags/docker/Dockerfile -t docker_image_task .
+
+
