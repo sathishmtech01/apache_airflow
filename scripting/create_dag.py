@@ -9,6 +9,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
 from datetime import datetime, timedelta
+from airflow.utils.dates import days_ago
 """)
 f.write('dag = DAG("{}",schedule_interval="{}",default_args={},catchup={})'.format(dag_initialize_args['dag_id'],dag_initialize_args["schedule_interval"],dag_initialize_args["default_args"],"False"))
 f.write('\ntask_sequence = {} '.format(task_sequence))

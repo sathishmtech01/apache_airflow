@@ -22,7 +22,8 @@ def save_dag():
 	f.write('\nfrom airflow.operators.bash_operator import BashOperator')
 	f.write('\nfrom airflow.operators.dummy_operator import DummyOperator')
 	f.write('\nfrom datetime import datetime, timedelta')
-	f.write('\ndag = DAG("{}",schedule_interval="{}",default_args={},catchup={})'.format(dag_initialize_args['dag_id'],
+	f.write('\nfrom airflow.utils.dates import days_ago')
+	f.write('\ndag = DAG("{}",schedule_interval="{}",start_date=days_ago(2),default_args={},catchup={})'.format(dag_initialize_args['dag_id'],
 																					   dag_initialize_args[
 																						   "schedule_interval"],
 																					   dag_initialize_args[
